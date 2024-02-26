@@ -36,8 +36,10 @@ const SettingsModal = () => {
               >
                 <button
                   className="py-auto"
-                  onClick={() => {setActiveTaxOn(true); setActiveTaxType(false)}}
-                  
+                  onClick={() => {
+                    setActiveTaxOn(true);
+                    setActiveTaxType(false);
+                  }}
                 >
                   Tax On
                 </button>
@@ -51,51 +53,53 @@ const SettingsModal = () => {
               >
                 <button
                   className="py-auto"
-                  onClick={() => {setActiveTaxOn(false); setActiveTaxType(true)}}
+                  onClick={() => {
+                    setActiveTaxOn(false);
+                    setActiveTaxType(true);
+                  }}
                 >
                   Tax Type
                 </button>
               </div>
             </div>
             <div>
-
-            {activeTaxOn && (
-              <div className="flex flex-col py-6">
-                <Radio
-                  name="type"
-                  color="blue"
-                  label="After Discount"
-                  className="text-xl font-bold"
-                  defaultChecked
-                />
-                <Radio
-                  name="type"
-                  color="blue"
-                  label="Before Discount"
-                  className="text-xl font-bold"
-                />
-              </div>
-            )}
-            {activeTaxType && (
-              <div className="flex flex-col py-6">
-                <Radio
-                  name="type"
-                  color="blue"
-                  label="Sales TAX"
-                  className="text-xl font-bold"
-                  defaultChecked
+              {activeTaxOn && (
+                <div className="flex flex-col py-6">
+                  <Radio
+                    name="type"
+                    color="blue"
+                    label="After Discount"
+                    className="text-xl font-bold"
+                    defaultChecked
                   />
-                <Radio
-                  name="type"
-                  color="blue"
-                  label="VAT"
-                  className="text-xl font-bold"
+                  <Radio
+                    name="type"
+                    color="blue"
+                    label="Before Discount"
+                    className="text-xl font-bold"
                   />
-              </div>
-            )}
+                </div>
+              )}
+              {activeTaxType && (
+                <div className="flex flex-col py-6">
+                  <Radio
+                    name="type"
+                    color="blue"
+                    label="Sales TAX"
+                    className="text-xl font-bold"
+                    defaultChecked
+                  />
+                  <Radio
+                    name="type"
+                    color="blue"
+                    label="VAT"
+                    className="text-xl font-bold"
+                  />
+                </div>
+              )}
             </div>
             <div className="w-full">
-              <button className="w-full py-2 rounded-md bg-blue-600 text-white font-bold text-center text-2xl">
+              <button className="w-full py-2 rounded-sm bg-blue-600 text-white font-bold text-center text-2xl">
                 Update
               </button>
             </div>
