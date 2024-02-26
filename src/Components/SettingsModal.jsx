@@ -25,6 +25,7 @@ const SettingsModal = () => {
             </div>
           </div>
           {/* Content */}
+          <form>
           <div className="flex flex-col pt-6">
             <div className="flex flex-row w-full">
               <div
@@ -99,11 +100,12 @@ const SettingsModal = () => {
               )}
             </div>
             <div className="w-full">
-              <button className="w-full py-2 rounded-sm bg-blue-600 text-white font-bold text-center text-2xl">
+              <button type="submit" className="w-full py-2 rounded-sm bg-blue-600 text-white font-bold text-center text-2xl">
                 Update
               </button>
             </div>
           </div>
+          </form>
         </div>
       </dialog>
     </div>

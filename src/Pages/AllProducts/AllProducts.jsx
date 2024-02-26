@@ -87,7 +87,7 @@ const AllProducts = () => {
       </div>
 
       {/* Show Products for the current page */}
-      <div className="grid grid-cols-5 gap-3 mx-3">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mx-3">
         {currentProducts.map((product) => (
           <ProductCard key={product._id} product={product} />
         ))}

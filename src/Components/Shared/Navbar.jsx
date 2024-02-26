@@ -1,5 +1,7 @@
 import React from "react";
-import { MdOutlineDashboard } from "react-icons/md";
+import PropTypes from "prop-types";
+
+import { MdOutlineDashboard, MdOutlineShoppingCart } from "react-icons/md";
 import { IoLocationOutline, IoSettingsOutline } from "react-icons/io5";
 import { LiaFileInvoiceDollarSolid } from "react-icons/lia";
 import { IoMdMenu } from "react-icons/io";
@@ -13,7 +15,7 @@ import { RxCross1 } from "react-icons/rx";
 import logo from "../../assets/goBilling.png";
 import SettingsModal from "../SettingsModal";
 
-export default function Navbar() {
+export default function Navbar({ openCart, setOpenCart }) {
   const [open, setOpen] = React.useState(false);
   const openDrawer = () => setOpen(true);
   const closeDrawer = () => setOpen(false);
@@ -108,7 +110,7 @@ export default function Navbar() {
           className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
         >
           <FaRegEdit />
-          Note
+          <span className="hidden md:block">Note</span>
         </NavLink>
       </div>
       <div>
@@ -117,7 +119,7 @@ export default function Navbar() {
           className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
         >
           <FaShuttleVan />
-          Shopping
+          <span className="hidden md:block">Shopping</span>
         </NavLink>
       </div>
       <div>
@@ -126,7 +128,7 @@ export default function Navbar() {
           className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
         >
           <AiOutlineFieldTime />
-          Hold Orders
+          <span className="hidden md:block">Hold Orders</span>
         </NavLink>
       </div>
       <div>
@@ -135,9 +137,21 @@ export default function Navbar() {
           className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
         >
           <MdOutlineAddCircle className="" />
-          New Item
+          <span className="hidden md:block">New Item</span>
         </NavLink>
       </div>
+      <button
+        onClick={() => setOpenCart(!openCart)}
+        className=" lg:hidden flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
+      >
+        <MdOutlineShoppingCart />
+        <span className="hidden md:block">Cart</span>
+      </button>
     </div>
   );
 }
+
+Navbar.propTypes = {
+  openCart: PropTypes.bool,
+  setOpenCart: PropTypes.bool,
+};
