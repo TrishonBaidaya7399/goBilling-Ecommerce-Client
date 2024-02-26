@@ -32,11 +32,11 @@ const CartPage = ({openCart}) => {
           <p className="text-lg font-bold text-gray-800">$10.00</p>
         </div>
       </div>
-      <div className="flex items-center custom-bg-color custom-text-color px-4 py-2 rounded-md">
-        <div className="lg:w-[60%]">
+      <div className="flex items-center justify-between custom-bg-color custom-text-color px-4 py-2 rounded-md">
+        <div className="md:w-[60%]">
           <p className="font-semibold text-md">Products Count (13)</p>
         </div>
-        <div className="flex lg:w-[40%] justify-between items-center text-xl font-bold">
+        <div className="flex md:w-[40%] justify-between gap-3 items-center text-xl font-bold">
           <div><p>Total</p></div>
           <div><p>$5005.50</p></div>
         </div>
@@ -80,11 +80,11 @@ const CartPage = ({openCart}) => {
           <p className="text-lg font-bold text-gray-800">$10.00</p>
         </div>
       </div>
-      <div className="flex items-center custom-bg-color custom-text-color px-4 py-2 rounded-md">
-        <div className="lg:w-[60%]">
+      <div className="flex flex-row items-center justify-between custom-bg-color custom-text-color px-4 py-2 rounded-md ">
+        <div className="w-3/5">
           <p className="font-semibold text-md">Products Count (13)</p>
         </div>
-        <div className="flex lg:w-[40%] justify-between items-center text-xl font-bold">
+        <div className=" w-2/5 flex justify-between items-center text-xl font-bold">
           <div><p>Total</p></div>
           <div><p>$5005.50</p></div>
         </div>

@@ -27,7 +27,7 @@ export default function Navbar({ openCart, setOpenCart }) {
           <button className="bg-none text-3xl" onClick={openDrawer}>
             <IoMdMenu />
           </button>
-          <Drawer open={open} onClose={closeDrawer}>
+          <Drawer open={open} size={290} onClose={closeDrawer}>
             <div className="flex items-center justify-between bg-gray-300">
               <div className="logo w-[70%] mx-auto py-3">
                 <img src={logo} alt="goBilling" className="w-full" />
@@ -43,7 +43,7 @@ export default function Navbar({ openCart, setOpenCart }) {
             </div>
             <Typography color="gray" className="bg-gray-300 p-4 font-normal">
               <p className="text-gray-600 text-md">Location:</p>
-              <p className="text-gray-700 text-xl font-semibold">
+              <p className="text-gray-700 lg:text-xl font-semibold">
                 Los Angeles, California
               </p>
             </Typography>
@@ -56,8 +56,8 @@ export default function Navbar({ openCart, setOpenCart }) {
                     isActive ? "bg-[#b8b8ff]/30 text-blue-800" : "text-gray-700"
                   }
                 >
-                  <li className="w-full flex flex-row items-center  text-xl">
-                    <MdOutlineDashboard className="text-6xl -mr-3" />
+                  <li className="w-full flex flex-row items-center  lg:text-xl">
+                    <MdOutlineDashboard className="text-5xl lg:text-6xl -mr-3" />
                     Dashboard
                   </li>
                 </NavLink>
@@ -67,8 +67,8 @@ export default function Navbar({ openCart, setOpenCart }) {
                     isActive ? "bg-[#b8b8ff]/30 text-blue-800" : "text-gray-700"
                   }
                 >
-                  <li className="w-full flex flex-row items-center  text-xl">
-                    <IoLocationOutline className="text-6xl -mr-3" />
+                  <li className="w-full flex flex-row items-center  lg:text-xl">
+                    <IoLocationOutline className="text-5xl lg:text-6xl -mr-3" />
                     Location
                   </li>
                 </NavLink>
@@ -78,8 +78,8 @@ export default function Navbar({ openCart, setOpenCart }) {
                     isActive ? "bg-[#b8b8ff]/30 text-blue-800" : "text-gray-700"
                   }
                 >
-                  <li className="w-full flex flex-row items-center  text-xl">
-                    <LiaFileInvoiceDollarSolid className="text-6xl -mr-3" />
+                  <li className="w-full flex flex-row items-center  lg:text-xl">
+                    <LiaFileInvoiceDollarSolid className="text-5xl lg:text-6xl -mr-3" />
                     POS Invoices
                   </li>
                 </NavLink>
@@ -89,13 +89,13 @@ export default function Navbar({ openCart, setOpenCart }) {
                     document.getElementById("my_modal_1").showModal()
                   }
                 >
-                  <li className="w-full flex flex-row items-center text-gray-700 text-xl">
-                    <IoSettingsOutline className="text-6xl -mr-3" />
+                  <li className="w-full flex flex-row items-center text-gray-700 lg:text-xl">
+                    <IoSettingsOutline className="text-5xl lg:text-6xl -mr-3" />
                     Settings
                   </li>
                 </button>
 
-                <button className="border-2 border-gray-300 mx-4 text-xl text-gray-500 font-semibold text-center py-2 rounded-sm absolute bottom-2 w-[90%]">
+                <button className="border-2 border-gray-300 mx-4 lg:text-xl text-gray-500 font-semibold text-center py-2 rounded-sm absolute bottom-2 w-[90%]">
                   Logout
                 </button>
               </ul>
@@ -107,7 +107,7 @@ export default function Navbar({ openCart, setOpenCart }) {
       <div>
         <NavLink
           to=""
-          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
+          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-md"
         >
           <FaRegEdit />
           <span className="hidden md:block">Note</span>
@@ -116,7 +116,7 @@ export default function Navbar({ openCart, setOpenCart }) {
       <div>
         <NavLink
           to=""
-          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
+          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-md"
         >
           <FaShuttleVan />
           <span className="hidden md:block">Shopping</span>
@@ -125,7 +125,7 @@ export default function Navbar({ openCart, setOpenCart }) {
       <div>
         <NavLink
           to=""
-          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
+          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-md"
         >
           <AiOutlineFieldTime />
           <span className="hidden md:block">Hold Orders</span>
@@ -134,7 +134,7 @@ export default function Navbar({ openCart, setOpenCart }) {
       <div>
         <NavLink
           to=""
-          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
+          className="flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-md"
         >
           <MdOutlineAddCircle className="" />
           <span className="hidden md:block">New Item</span>
@@ -142,7 +142,7 @@ export default function Navbar({ openCart, setOpenCart }) {
       </div>
       <button
         onClick={() => setOpenCart(!openCart)}
-        className=" lg:hidden flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-lg"
+        className=" lg:hidden flex items-center gap-1 note custom-bg-color text-center custom-text-color px-3 py-2 rounded-md text-md"
       >
         <MdOutlineShoppingCart />
         <span className="hidden md:block">Cart</span>

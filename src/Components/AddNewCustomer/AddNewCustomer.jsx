@@ -4,7 +4,7 @@ import { Input } from "@material-tailwind/react";
 
 const AddNewCustomer = () => {
   return (
-    <div className="custom-bg-color custom-text-color px-4 py-2 text-xl flex justify-between items-center rounded-lg my-3">
+    <div className="custom-bg-color custom-text-color px-4 py-2 text-xl flex justify-between items-center rounded-lg md:my-3">
       <div className="user flex items-center gap-1">
         <p className="icon">
           <PiUserCircleFill className="text-2xl" />

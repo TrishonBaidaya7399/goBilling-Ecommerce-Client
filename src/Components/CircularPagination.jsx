@@ -22,16 +22,16 @@ export function CircularPagination({ totalPages, activePage, onPageChange }) {
   };
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center md:gap-4">
       <Button
         variant="text"
-        className="flex items-center gap-2 rounded-full"
+        className="flex items-center md:gap-2 rounded-full"
         onClick={prev}
         disabled={activePage === 1}
       >
-        <FaArrowLeft  strokeWidth={2} className="h-4 w-4" /> Previous
+        <FaArrowLeft  strokeWidth={2} className="h-4 w-4" /> <span className="hidden md:block">Previous</span>
       </Button>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center md:gap-2">
         {[...Array(totalPages).keys()].map((index) => (
           <IconButton key={index + 1} {...getItemProps(index + 1)}>
             {index + 1}
@@ -40,11 +40,11 @@ export function CircularPagination({ totalPages, activePage, onPageChange }) {
       </div>
       <Button
         variant="text"
-        className="flex items-center gap-2 rounded-full"
+        className="flex items-center md:gap-2 rounded-full"
         onClick={next}
         disabled={activePage === totalPages}
       >
-        Next <FaArrowRight  strokeWidth={2} className="h-4 w-4" />
+        <span className="hidden md:block">Next</span> <FaArrowRight  strokeWidth={2} className="h-4 w-4" />
       </Button>
     </div>
   );

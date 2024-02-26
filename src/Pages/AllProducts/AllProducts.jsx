@@ -56,27 +56,27 @@ const AllProducts = () => {
 
       {/* Category */}
       <div className="flex items-center">
-        <div className="w-full flex justify-between mx-3 my-2 text-sm">
+        <div className="w-full overflow-x-auto flex justify-between mx-3 my-2 text-sm">
           <NavLink
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "bg-white border-blue-400 border-2 rounded-md px-3 py-2 text-blue-500 font-semibold"
-                : "bg-white border-gray-500 border-2 rounded-md px-3 py-2 text-gray-500 font-semibold"
+                ? "bg-white border-blue-400 border-2 rounded-md p-1 md:px-3 md:py-2 text-xs md:text-md lg:text-[16px] text-blue-500 font-semibold"
+                : "bg-white border-gray-500 border-2 rounded-md p-1 md:px-3 md:py-2 text-xs md:text-md lg:text-[16px] text-gray-500 font-semibold"
             }
           >
             All Categories
           </NavLink>
-          <NavLink className="bg-white border-gray-500 border-2 rounded-md px-3 py-2 text-gray-500 font-semibold">
+          <NavLink className="bg-white border-gray-500 border-2 rounded-md p-1 md:px-3 md:py-2 text-xs md:text-md lg:text-[16px] text-gray-500 font-semibold">
             Electronics
           </NavLink>
-          <NavLink className="bg-white border-gray-500 border-2 rounded-md px-3 py-2 text-gray-500 font-semibold">
+          <NavLink className="bg-white border-gray-500 border-2 rounded-md p-1 md:px-3 md:py-2 text-xs md:text-md lg:text-[16px] text-gray-500 font-semibold">
             Home & Lifestyle
           </NavLink>
-          <NavLink className="bg-white border-gray-500 border-2 rounded-md px-3 py-2 text-gray-500 font-semibold">
+          <NavLink className="bg-white border-gray-500 border-2 rounded-md p-1 md:px-3 md:py-2 text-xs md:text-md lg:text-[16px] text-gray-500 font-semibold">
             Men Fashions
           </NavLink>
-          <NavLink className="bg-white border-gray-500 border-2 rounded-md px-3 py-2 text-gray-500 font-semibold">
+          <NavLink className="bg-white border-gray-500 border-2 rounded-md p-1 md:px-3 md:py-2 text-xs md:text-md lg:text-[16px] text-gray-500 font-semibold">
             Woman Fashions
           </NavLink>
         </div>

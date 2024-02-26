@@ -8,12 +8,12 @@ const Main = () => {
   return (
     <div className="flex flex-col lg:flex-row w-full">
 
-      <div className={`${openCart ? "lg:w-2/5 w-full cartItems pb-6 h-screen overflow-auto p-2" : "lg:w-2/5 w-full cartItems p-2"}`}>
+      <div className={`${openCart ? "lg:w-2/5 w-full cartItems pb-6 overflow-auto p-2" : "lg:w-2/5 w-full cartItems p-2"}`}>
         <Navbar openCart={openCart} setOpenCart={setOpenCart}/>
         <CartPage openCart={openCart}/>
       </div>
 
-      <div className="lg:w-3/5 w-full main pb-6 h-screen overflow-auto bg-[#b8b8ff]/30 border-2 border-gray-300">
+      <div className="lg:w-3/5 w-full main pb-6 h-full overflow-auto bg-[#b8b8ff]/30 border-2 border-gray-300">
         <Outlet />
       </div>
 
