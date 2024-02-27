@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Input } from "@material-tailwind/react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { LuHelpingHand } from "react-icons/lu";
+import Swal from "sweetalert2";
 
 const Payment = () => {
   const [activeCash, setActiveCash] = useState(false);
@@ -20,7 +21,13 @@ const Payment = () => {
   console.log(totalAmount);
   const handlePay = (e)=> {
 e.preventDefault();
-
+Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Payment Successful",
+    showConfirmButton: false,
+    timer: 2000
+  });
   }
   return (
     <div className="p-4">
@@ -133,6 +140,15 @@ e.preventDefault();
             <div className="flex flex-col gap-2">
               <form>
                 {/* Customize these input fields for Cash payment */}
+                <div className="py-2">
+                  <Input
+                    className=""
+                    type="text"
+                    name="customerName"
+                    variant="standard"
+                    label="Customer Name"
+                  />
+                </div>
                 <div className="py-2">
                   <Input
                     className=""

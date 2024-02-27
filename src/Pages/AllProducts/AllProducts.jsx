@@ -13,6 +13,8 @@ const AllProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentProducts, setCurrentProducts] = useState([]);
   const [openRightDrawer, setOpenRightDrawer] = useState(false);
+  //loading part will be implemented after the backend implementation, and will gte the loading state from there
+  const isLoading = false;
 
   useEffect(() => {
     fetch("/DATA/Products.json")
@@ -39,7 +41,7 @@ const AllProducts = () => {
     setOpenRightDrawer(true);
   };
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 h-[100vh]">
       {/* Search Bar */}
       <div className="w-full px-4 py-2 flex gap-2 items-center bg-[#F9FAFB] shadow-md">
         <div className="icon">
@@ -87,20 +89,26 @@ const AllProducts = () => {
       </div>
 
       {/* Show Products for the current page */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mx-3">
-        {currentProducts.map((product) => (
-          <ProductCard key={product._id} product={product} />
-        ))}
-      </div>
+      {!isLoading ? (
+        <>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mx-3">
+            {currentProducts.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))}
+          </div>
 
-      {/* Pagination */}
-      <div className="flex justify-center mt-4">
-        <CircularPagination
-          totalPages={totalPages}
-          activePage={currentPage}
-          onPageChange={handlePageChange}
-        />
-      </div>
+          {/* Pagination */}
+          <div className="flex justify-center mt-4">
+            <CircularPagination
+              totalPages={totalPages}
+              activePage={currentPage}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        </>
+      ) : (
+        <span className="loading loading-spinner text-info h-[70px] w-[70px] mx-auto my-[100px]"></span>
+      )}
 
       {/* Right-side Drawer */}
       <DrawerPlacement
