@@ -7,7 +7,7 @@ import { PiHandGrabbing } from "react-icons/pi";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { LuHelpingHand } from "react-icons/lu";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const CartPage = ({openCart}) => {
@@ -15,6 +15,7 @@ const CartPage = ({openCart}) => {
   const [discount, setDiscount] = useState(0)
   const [tax, setTax] = useState(0)
   const [products, setProducts] = useState(0)
+  const navigate = useNavigate()
   useEffect(() => {
     const newTax = subTotal * 0.05;
     setTax(newTax);
@@ -23,6 +24,11 @@ const CartPage = ({openCart}) => {
     const newDiscount = subTotal * 0.1;
     setDiscount(newDiscount);
   }, [products]);
+
+  const handlePayment = ()=>{
+    const totalAmount = (subTotal + tax + 5.50 - discount).toFixed(2);
+    navigate("/payment", {state:{totalAmount}})
+  }
   return (
     <div className="">
       <AddNewCustomer />
@@ -116,10 +122,10 @@ const CartPage = ({openCart}) => {
             <p className="text-3xl"><FaHandHoldingUsd /></p>
             <p className="hidden md:block">Discount</p>
         </div>
-        <NavLink to="payment" className=" rounded-md flex items-center justify-center gap-1 text-xl w-full px-3 py-2 font-semibold custom-bg-color custom-text-color">
+        <button onClick={handlePayment} className=" rounded-md flex items-center justify-center gap-1 text-xl w-full px-3 py-2 font-semibold custom-bg-color custom-text-color">
             <p className="text-3xl relative"><LuHelpingHand/><FaRegMoneyBillAlt className="text-sm absolute -top-1 right-1"/></p>
             <p className="hidden md:block">Pay</p>
-        </NavLink>
+        </button>
       </div>
       </div>
     </div>
