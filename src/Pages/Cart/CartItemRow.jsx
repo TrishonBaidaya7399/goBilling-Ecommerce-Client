@@ -10,7 +10,7 @@ const CartItemRow = ({ item }) => {
         <FiEdit className="text-xl"/>
       </div>
       <div className="details grid grid-cols-4 rounded-sm w-full p-2 border-2 border-gray-500">
-        <div className="ProductName">{item?.productName}</div>
+        <div className="ProductName">{item?.name}</div>
         <div className="price">${item?.price}</div>
         <div className="quantity flex gap-1 items-center">
           <MdAddCircle />

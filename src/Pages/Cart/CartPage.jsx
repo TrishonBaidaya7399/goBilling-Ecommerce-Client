@@ -74,7 +74,7 @@ const CartPage = ({openCart}) => {
             <p className="text-3xl"><FaHandHoldingUsd /></p>
             <p className="hidden md:block">Discount</p>
         </div>
-        <div className=" rounded-md flex items-center justify-center gap-1 text-xl w-full px-3 py-2 font-semibold custom-bg-color custom-text-color">
+        <div onClick={handlePayment} className=" rounded-md flex items-center justify-center gap-1 text-xl w-full px-3 py-2 font-semibold custom-bg-color custom-text-color">
             <p className="text-3xl relative"><LuHelpingHand/><FaRegMoneyBillAlt className="text-sm absolute -top-1 right-1"/></p>
             <p className="hidden md:block">Pay</p>
         </div>

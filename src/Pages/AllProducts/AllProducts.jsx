@@ -17,7 +17,7 @@ const AllProducts = () => {
   const isLoading = false;
 
   useEffect(() => {
-    fetch("/DATA/Products.json")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);
@@ -41,7 +41,7 @@ const AllProducts = () => {
     setOpenRightDrawer(true);
   };
   return (
-    <div className="flex flex-col gap-2 h-[100vh]">
+    <div className="flex flex-col gap-2 h-[110vh] pb-12">
       {/* Search Bar */}
       <div className="w-full px-4 py-2 flex gap-2 items-center bg-[#F9FAFB] shadow-md">
         <div className="icon">
@@ -90,7 +90,7 @@ const AllProducts = () => {
 
       {/* Show Products for the current page */}
       {!isLoading ? (
-        <>
+        <div className="pb-6">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mx-3">
             {currentProducts.map((product) => (
               <ProductCard key={product._id} product={product} />
@@ -105,7 +105,7 @@ const AllProducts = () => {
               onPageChange={handlePageChange}
             />
           </div>
-        </>
+        </div>
       ) : (
         <span className="loading loading-spinner text-info h-[70px] w-[70px] mx-auto my-[100px]"></span>
       )}
@@ -115,6 +115,7 @@ const AllProducts = () => {
         placement="right"
         open={openRightDrawer}
         onClose={() => setOpenRightDrawer(false)}
+        
       />
     </div>
   );

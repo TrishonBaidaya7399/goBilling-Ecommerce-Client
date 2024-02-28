@@ -13,7 +13,7 @@ const Main = () => {
         <CartPage openCart={openCart}/>
       </div>
 
-      <div className="lg:w-3/5 w-full main pb-6 h-full overflow-auto bg-[#b8b8ff]/30 border-2 border-gray-300">
+      <div className="lg:w-3/5 w-full main pb-6 overflow-auto bg-[#b8b8ff]/30 border-2 border-gray-300">
         <Outlet />
       </div>
 

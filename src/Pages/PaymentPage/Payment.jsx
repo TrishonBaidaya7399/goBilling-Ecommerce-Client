@@ -35,8 +35,8 @@ Swal.fire({
         <p className="text-xl text-gray-500">Order Amount</p>
         <p className="text-2xl font-bold">$ {totalAmount}</p>
       </div>
-      <div className="flex w-full h-full border-2 border-gray-400 rounded-sm bg-white">
-        <div className="w-1/3 pt-4 text-gray-600 border-r-2 border-gray-400 flex flex-col">
+      <div className="flex flex-col md:flex-row w-full h-full border-2 border-gray-400 rounded-sm bg-white">
+        <div className="w-full md:w-1/3 pt-4 text-gray-600 border-r-2 border-gray-400 flex flex-col">
           <button
             onClick={() => {setActiveCash(true); setActiveCard(false);setActiveAccount(false);setActiveCheque(false)}}
             className={`${
@@ -90,9 +90,9 @@ Swal.fire({
             <p>Cheque</p>
           </button>
         </div>
-        <div className="w-2/3 py-4 text-gray-400 px-12 h-[100vh] ">
+        <div className="w-full md:w-2/3 py-4 text-gray-400 px-4 md:px-12 md:h-[100vh] ">
          <div className=" flex flex-col justify-between">
-           <div className="h-[80vh]">
+           <div className="md:h-[80vh]">
            {activeCard && (
             <div className="flex flex-col gap-2">
               <form>
@@ -266,7 +266,7 @@ Swal.fire({
             </div>
           )}
            </div>
-          <div className="actionButtons  flex gap-4 w-full">
+          <div className="actionButtons pt-4 md:pt-0 flex gap-4 w-full">
             <button onClick={()=>navigate("/")} className=" rounded-md flex items-center justify-center gap-1 text-lg w-fit p-3 font-semibold bg-red-500/30 text-red-400 ">
               <p className="text-3xl">
                 <IoMdCloseCircleOutline />
