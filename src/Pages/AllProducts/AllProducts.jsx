@@ -17,7 +17,7 @@ const AllProducts = () => {
   const isLoading = false;
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://go-billing-ecommerce-server.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);

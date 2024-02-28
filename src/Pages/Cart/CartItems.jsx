@@ -10,7 +10,7 @@ const CartItems = ({setSubTotal, setProducts}) => {
   
   useEffect(() => {
     // Fetch cart items from the server
-    axios.get("http://localhost:5000/cart")
+    axios.get("https://go-billing-ecommerce-server.vercel.app/cart")
       .then(response => {
         // Assuming the response.data is an array of cart items
         setCartItems(response.data);

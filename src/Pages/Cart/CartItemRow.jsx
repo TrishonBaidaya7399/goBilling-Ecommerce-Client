@@ -20,7 +20,7 @@ const CartItemRow = ({ item }) => {
       .then((result) => {
         if (result.isConfirmed) {
           console.log("Delete itemId req: ", id);
-          axios.delete(`http://localhost:5000/cart/${id}`).then((res) => {
+          axios.delete(`https://go-billing-ecommerce-server.vercel.app/cart/${id}`).then((res) => {
             if (res.data.deletedCount > 0) {
               setTimeout(() => {
                 window.location.reload();
@@ -39,7 +39,7 @@ const CartItemRow = ({ item }) => {
   };
 
   const handleIncrease = () => {
-    axios.put(`http://localhost:5000/cart/increase/${item?._id}`)
+    axios.put(`https://go-billing-ecommerce-server.vercel.app/cart/increase/${item?._id}`)
       .then((res) => {
         console.log("Quantity increased:", res.data);
         setTimeout(() => {
@@ -52,7 +52,7 @@ const CartItemRow = ({ item }) => {
   };
 
   const handleDecrease = () => {
-    axios.put(`http://localhost:5000/cart/decrease/${item?._id}`)
+    axios.put(`https://go-billing-ecommerce-server.vercel.app/cart/decrease/${item?._id}`)
       .then((res) => {
         console.log("Quantity decreased:", res.data);
         setTimeout(() => {

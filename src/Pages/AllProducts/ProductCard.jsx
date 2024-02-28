@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
   
     // Fetch the current cart items
     try {
-      const response = await axios.get("http://localhost:5000/cart");
+      const response = await axios.get("https://go-billing-ecommerce-server.vercel.app/cart");
       const cartItems = response.data;
   
       // Check if the product is already in the cart
@@ -44,7 +44,7 @@ const ProductCard = ({ product }) => {
             };
   
             // Add the product to the cart
-            const response = await axios.post(`http://localhost:5000/cart`, cartItem);
+            const response = await axios.post(`https://go-billing-ecommerce-server.vercel.app/cart`, cartItem);
             console.log(response.data);
   
             if (response.data.insertedId) {
