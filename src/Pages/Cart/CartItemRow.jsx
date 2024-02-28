@@ -22,14 +22,9 @@ const CartItemRow = ({ item }) => {
           console.log("Delete itemId req: ", id);
           axios.delete(`http://localhost:5000/cart/${id}`).then((res) => {
             if (res.data.deletedCount > 0) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your item has been deleted.",
-                icon: "success",
-              });
               setTimeout(() => {
                 window.location.reload();
-              }, 1000);
+              }, 50);
             }
           });
         }
@@ -42,6 +37,32 @@ const CartItemRow = ({ item }) => {
         });
       });
   };
+
+  const handleIncrease = () => {
+    axios.put(`http://localhost:5000/cart/increase/${item?._id}`)
+      .then((res) => {
+        console.log("Quantity increased:", res.data);
+        setTimeout(() => {
+          window.location.reload();
+        }, 50);
+      })
+      .catch((error) => {
+        console.error("Error increasing quantity:", error);
+      });
+  };
+
+  const handleDecrease = () => {
+    axios.put(`http://localhost:5000/cart/decrease/${item?._id}`)
+      .then((res) => {
+        console.log("Quantity decreased:", res.data);
+        setTimeout(() => {
+          window.location.reload();
+        }, 50);
+      })
+      .catch((error) => {
+        console.error("Error decreasing quantity:", error);
+      });
+  };
   return (
     <div className="flex items-center gap-1 text-gray-500 mb-[-2px]">
       <div className="editIcon">
@@ -51,9 +72,13 @@ const CartItemRow = ({ item }) => {
         <div className="ProductName">{item?.name}</div>
         <div className="price">${item?.price}</div>
         <div className="quantity flex gap-1 items-center">
-          <MdAddCircle />
+          <button onClick={handleDecrease}>
+            <MdRemoveCircle />
+            </button>
           {item?.quantity}
-          <MdRemoveCircle />
+          <button onClick={handleIncrease}>
+            <MdAddCircle />
+            </button>
         </div>
         <div className="totalPrice flex gap-1">
           ${item?.quantity * item.price}
