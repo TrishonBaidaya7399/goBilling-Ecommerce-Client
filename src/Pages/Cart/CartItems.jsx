@@ -7,16 +7,20 @@ import axios from 'axios';
 
 const CartItems = ({setSubTotal, setProducts}) => {
   const [cartItems, setCartItems] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
   
   useEffect(() => {
     // Fetch cart items from the server
+    setIsLoading(true)
     axios.get("https://go-billing-ecommerce-server.vercel.app/cart")
       .then(response => {
         // Assuming the response.data is an array of cart items
         setCartItems(response.data);
+        setIsLoading(false)
       })
       .catch(error => {
         console.error("Error fetching cart items:", error);
+        setIsLoading(false)
       });
   }, []);
       setProducts(cartItems.length);
@@ -35,9 +39,19 @@ const CartItems = ({setSubTotal, setProducts}) => {
   }, [cartItems]);
       
     return (
-        <div className="px-2 pt-4 md:pt-0">
-           {cartItems.map((cartItem)=> <CartItemRow key={cartItem._id} item = {cartItem}/>)} 
+        <>
+      {!isLoading
+      ?
+      <div className="px-2 pt-4 md:pt-0">
+        {cartItems.map((cartItem)=> <CartItemRow key={cartItem._id} item = {cartItem}/>)} 
         </div>
+        :
+        <div className="flex justify-center">
+
+        <span className="loading loading-spinner text-info h-[70px] w-[70px] mx-auto my-[100px]"></span>
+        </div>
+      }
+      </> 
     );
 };
 

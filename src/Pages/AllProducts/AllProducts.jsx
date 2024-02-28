@@ -14,12 +14,13 @@ const AllProducts = () => {
   const [currentProducts, setCurrentProducts] = useState([]);
   const [openRightDrawer, setOpenRightDrawer] = useState(false);
   //loading part will be implemented after the backend implementation, and will gte the loading state from there
-  const isLoading = false;
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    setIsLoading(true)
     fetch("https://go-billing-ecommerce-server.vercel.app/products")
       .then((res) => res.json())
-      .then((data) => setAllProducts(data));
+      .then((data) => {setAllProducts(data); setIsLoading(false)});
   }, []);
 
   useEffect(() => {
